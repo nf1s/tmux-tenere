@@ -4,8 +4,13 @@
 PLUGIN_NAME="tenere"
 
 # Get the width and height from the tmux options
+key_binding=$(tmux show-option -gqv "@tmux-tenere-key-binding")
 window_width=$(tmux show-option -gqv "@tmux-tenere-width")
 window_height=$(tmux show-option -gqv "@tmux-tenere-height")
+
+if [ ! -n "$key_binding" ]; then
+  key_binding="t"
+fi
 
 if [ ! -n "$window_width" ]; then
   window_width="80%"
@@ -15,4 +20,4 @@ if [ ! -n "$window_height" ]; then
   window_height="60%"
 fi
 
-tmux bind C-t run-shell "tmux popup -w $window_width -h $window_height -E 'tenere'"
+tmux bind $key_binding run-shell "tmux popup -w $window_width -h $window_height -E 'tenere'"
