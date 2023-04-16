@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 
-tmux_tenere_width="@tmux-tenere-width"
-tmux_tenere_height="@tmux-tenere-height"
+window_width="@tmux-tenere-width"
+window_height="@tmux-tenere-height"
 
-if [ ! -n "$tmux_tenere_width" ]; then
-  tmux_tenere_width="80%"
+if [ ! -n "$window_width" ]; then
+  window_width="80%"
 fi
 
-if [ ! -n "$tmux_tenere_height" ]; then
-  tmux_tenere_height="60%"
+if [ ! -n "$window_height" ]; then
+  window_height="60%"
 fi
 
 
-bind-key C-t display-popup -w $tmux_tenere_width -h $tmux_tenere_height -E "Tenere" "tenere"
+bind-key C-t run-shell "tmux display-popup -w '#{window_width}' -h '#{window_height}' -E 'Tenere' 'tenere'"
