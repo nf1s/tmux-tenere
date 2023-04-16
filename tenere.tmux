@@ -12,4 +12,4 @@ if [ ! -n "$window_height" ]; then
 fi
 
 
-bind-key C-t run-shell "tmux display-popup -w '#{window_width}' -h '#{window_height}' -E 'Tenere' 'tenere'"
+bind-key C-t run-shell "tmux display-popup -w '#{window_width}' -h '#{window_height}' -E 'tenere'"
