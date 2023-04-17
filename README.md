@@ -42,7 +42,7 @@ Reload configuration, then press prefix + I.
 
 by default to start tenere Prefix + t
 
-#### Default Configuration
+to change default configuration, add to your `~/.tmux.conf`
 
 ```bash
 set -g @tmux-tenere-key-binding 't'
