@@ -17,7 +17,7 @@ if [ ! -n "$window_width" ]; then
 fi
 
 if [ ! -n "$window_height" ]; then
-  window_height="60%"
+  window_height="80%"
 fi
 
 tmux bind $key_binding run-shell "tmux popup -w $window_width -h $window_height -E 'tenere'"
